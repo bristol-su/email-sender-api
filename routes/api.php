@@ -17,5 +17,5 @@ use Illuminate\Http\Request;
 Route::middleware('auth:api')->namespace('Api')->group(function() {
     Route::resource('emails', 'EmailAddressController')->only(['index']);
     Route::get('/email/{email_address}/send', 'SendEmailController@index');
-
+    Route::get('/whoami', 'WhoAmIController@index');
 });
