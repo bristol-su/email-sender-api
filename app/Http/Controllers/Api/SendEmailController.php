@@ -12,7 +12,7 @@ use Illuminate\Support\Facades\Mail;
 class SendEmailController extends Controller
 {
 
-    public function index(Request $request, EmailAddress $emailAddress)
+    public function store(Request $request, EmailAddress $emailAddress)
     {
 
         $content = $request->input('content');

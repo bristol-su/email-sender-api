@@ -2,9 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a9ef9e3f-7667-477c-82e1-8426df8adba5" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/Api/WhoAmIController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Api/SendEmailController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Api/SendEmailController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Providers/RouteServiceProvider.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Providers/RouteServiceProvider.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/api.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/api.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -183,7 +183,7 @@
       <updated>1571406687389</updated>
       <workItem from="1571406688555" duration="1740000" />
       <workItem from="1571665136426" duration="198000" />
-      <workItem from="1571997782916" duration="5974000" />
+      <workItem from="1571997782916" duration="7042000" />
     </task>
     <servers />
   </component>
