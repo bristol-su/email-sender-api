@@ -21,9 +21,9 @@ class SendEmailController extends Controller
         $ccUsers = $request->input('cc', []);
         $bccUsers = $request->input('bcc', []);
         $attachments = $request->input('attachments', []);
-        Mail::to($users)
-            ->cc($ccUsers)
-            ->bcc($bccUsers)
+        Mail::to(array_filter($users, function($user){return $user === null;}))
+            ->cc(array_filter($ccUsers, function($user){return $user === null;}))
+            ->bcc(array_filter($bccUsers, function($user){return $user === null;}))
             ->send(new DefaultMailable($emailAddress, $content, $subject, $attachments));
     }
 
