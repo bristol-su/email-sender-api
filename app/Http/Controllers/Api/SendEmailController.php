@@ -21,12 +21,22 @@ class SendEmailController extends Controller
         $ccUsers = $request->input('cc', []);
         $bccUsers = $request->input('bcc', []);
         $attachments = $request->input('attachments', []);
+
+
+        $type = $request->input('type', 'url');
+
         $uploadedAttachments = [];
         foreach ($attachments as $attachment) {
-            if (is_string($attachment)) {
+            if (is_string($attachment) && $type === 'url') {
                 $path = tempnam(sys_get_temp_dir(), 'EmailSender');
                 file_put_contents($path, file_get_contents($attachment));
                 $uploadedAttachments[] = new UploadedFile($path, basename($attachment), mime_content_type($path));
+            } elseif(is_string($attachment) && $type === 'base64') {
+                $path = tempnam(sys_get_temp_dir(), 'EmailSender');
+                $file = fopen( $path, "wb" );
+                fwrite( $file, base64_decode( $attachment ) );
+                fclose( $file );
+                $uploadedAttachments[] = new UploadedFile($path, basename($path), mime_content_type($path));
             } else {
                 $uploadedAttachments[] = $attachment;
             }
